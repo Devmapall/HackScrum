@@ -1,4 +1,4 @@
-<?hh //strict
+<?hh //partial
 
 require_once ROOT."abstract/scrumElementGateway.hh";
 
