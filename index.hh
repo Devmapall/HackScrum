@@ -1,7 +1,7 @@
 <?hh //partial
 
 //TODO: Check user permissions!
-require_once "src/config.hh";
+require_once "src/runtime.hh";
 
 if(isset($_POST['action'])) {
 
