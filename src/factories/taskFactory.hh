@@ -6,16 +6,33 @@ require_once Config::ROOT."task.hh";
 
 class TaskFactory extends ScrumElementFactory {
 
+    private UserFactory $ufac;
+
     public function __construct() {
         $this->gate = new TaskGateway();
+        $this->ufac = new UserFactory();
     }
     
     public function createAll(): Vector<ScrumElement> {
         $vec = $this->gate->getAll();
+        $ret = Vector{};
+        
         foreach($vec as $val) {
-            var_dump($val);
+            $obj = new Task();
+            $obj->setID($val->ID);
+            $obj->setTitle($val->title);
+            $obj->setText($val->text);
+            $obj->setSeverity(Severity::assert((int)$val->severity));
+            $obj->setPriority(Priority::assert((int)$val->priority));
+            $obj->setStatus(Status::assert((int)$val->status));
+            $obj->setAssignee($ufac->getUserById((int)$val->assignee));
+            $obj->setCreator($ufac->getUserById((int)$val->created_by));
+            $date = new DateTime();
+            $obj->setCreateDate($date->setTimestamp(strtotime($val->create_date)));
+            $obj->setAssignDate($date->setTimestamp(strtotime($val->assign_date)));
+            $ret[] = $obj;
         }
-        return Vector{new Task()};
+        return $ret;
     }
     
     public function createByUser(User $user): Vector<ScrumElement> {

@@ -42,4 +42,12 @@ class UserFactory {
 		$u->setID($id);
 		return $u;
 	}
+        
+        public function getUserByID(int $id) :User {
+		$username = $this->gate->getUserByID($id);
+		$u = new User();
+		$u->setUsername($username);
+		$u->setID($id);
+		return $u;
+	}
 }
