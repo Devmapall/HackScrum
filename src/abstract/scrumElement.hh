@@ -18,8 +18,8 @@ abstract class ScrumElement {
     
     public function __construct() {
         $this->ID = -1;
-        $this->severity = Severity::UNKNOWN;
-        $this->priority = Priority::UNDEFINED;
+        $this->severity = Severity::IDEA;
+        $this->priority = Priority::VERY_LOW;
         $this->status = Status::OPEN;
         $this->createDate = new DateTime();
         $this->assignDate = new DateTime();
