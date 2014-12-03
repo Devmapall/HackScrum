@@ -24,8 +24,8 @@ class TestTaskFactory extends TestCase {
 
 	public function testCreateAll() {
             $vec = $this->fac->createAll();
+            var_dump($vec);
             $this->t = $vec[0];
-            $this->t->task();
             
         }
 }
