@@ -1,4 +1,4 @@
-<?hh //partial
+<?hh //strict
 
 require_once Config::ROOT."abstract/scrumElementFactory.hh";
 require_once Config::ROOT."gateways/taskGateway.hh";
@@ -19,6 +19,7 @@ class TaskFactory extends ScrumElementFactory {
     public function createAll(): Vector<ScrumElement> {
         $vec = $this->gate->getAll();
         $ret = Vector{};
+        var_dump(Severity::NOTICE);
         
         foreach($vec as $val) {
             $obj = new Task();
