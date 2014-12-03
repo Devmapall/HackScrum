@@ -100,5 +100,4 @@ abstract class ScrumElement {
     public function addHistory(string $val): void {
         $this->history->add($val);
     }
-    
 }

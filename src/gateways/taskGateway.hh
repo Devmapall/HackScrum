@@ -14,6 +14,7 @@ class TaskGateway extends ScrumElementGateway {
         $return = Vector {};
         
         foreach($stmt->fetchObject() as $obj) {
+            var_dump($obj);
             $return[] = $obj;
         }
         
