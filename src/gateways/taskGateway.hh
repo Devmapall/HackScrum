@@ -12,9 +12,10 @@ class TaskGateway extends ScrumElementGateway {
         $sql = "SELECT * FROM tasks;";
         $stmt = $this->scrum->query($sql);
         $return = Vector {};
+        var_dump($fetch->fetchObject());
         
         foreach($stmt->fetchObject() as $obj) {
-            var_dump($obj);
+            //var_dump($obj);
             $return[] = $obj;
         }
         
