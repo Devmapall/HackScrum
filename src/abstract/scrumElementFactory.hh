@@ -1,7 +1,7 @@
 <?hh //strict
 
-require_once ROOT."abstract/scrumElementGateway.hh";
-require_once ROOT."abstract/scrumElement.hh";
+require_once Config::ROOT."abstract/scrumElementGateway.hh";
+require_once Config::ROOT."abstract/scrumElement.hh";
 
 abstract class ScrumElementFactory {
     

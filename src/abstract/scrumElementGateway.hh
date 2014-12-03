@@ -1,6 +1,6 @@
 <?hh //partial
 
-require_once ROOT."util/AbstractGateway.hh";
+require_once Config::ROOT."util/AbstractGateway.hh";
 
 abstract class ScrumElementGateway extends AbstractGateway {
 

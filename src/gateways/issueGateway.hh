@@ -1,6 +1,6 @@
 <?hh //partial
 
-require_once ROOT."abstract/scrumElementGateway.hh";
+require_once Config::ROOT."abstract/scrumElementGateway.hh";
 
 class IssueGateway extends ScrumElementGateway {
 

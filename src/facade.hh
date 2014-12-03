@@ -1,7 +1,7 @@
 <?hh //strict
 
-require_once ROOT."factories/userFactory.hh";
-require_once ROOT."factories/projectFactory.hh";
+require_once Config::ROOT."factories/userFactory.hh";
+require_once Config::ROOT."factories/projectFactory.hh";
 
 class ScrumFacade {
 

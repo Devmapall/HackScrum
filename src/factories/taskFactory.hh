@@ -1,8 +1,8 @@
 <?hh //strict
 
-require_once ROOT."abstract/scrumElementFactory.hh";
-require_once ROOT."gateways/taskGateway.hh";
-require_once ROOT."task.hh";
+require_once Config::ROOT."abstract/scrumElementFactory.hh";
+require_once Config::ROOT."gateways/taskGateway.hh";
+require_once Config::ROOT."task.hh";
 
 class TaskFactory extends ScrumElementFactory {
 

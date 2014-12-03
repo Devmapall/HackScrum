@@ -1,9 +1,9 @@
 <?hh //strict
 
-require_once ROOT."enum/severity.hh";
-require_once ROOT."enum/priority.hh";
-require_once ROOT."enum/status.hh";
-require_once ROOT."user.hh";
+require_once Config::ROOT."enum/severity.hh";
+require_once Config::ROOT."enum/priority.hh";
+require_once Config::ROOT."enum/status.hh";
+require_once Config::ROOT."user.hh";
 
 abstract class ScrumElement {
 

@@ -1,7 +1,7 @@
 <?hh //partial
 
-require_once ROOT."project.hh";
-require_once ROOT."gateways/projectGateway.hh";
+require_once Config::ROOT."project.hh";
+require_once Config::ROOT."gateways/projectGateway.hh";
 
 class ProjectFactory {
 

@@ -1,7 +1,7 @@
 <?hh //partial
 
-require_once ROOT."user.hh";
-require_once ROOT."gateways/userGateway.hh";
+require_once Config::ROOT."user.hh";
+require_once Config::ROOT."gateways/userGateway.hh";
 
 class UserFactory {
 

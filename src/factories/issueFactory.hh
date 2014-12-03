@@ -1,8 +1,8 @@
 <?hh //strict
 
-require_once ROOT."abstract/scrumElementFactory.hh";
-require_once ROOT."gateways/issueGateway.hh";
-require_once ROOT."issue.hh";
+require_once Config::ROOT."abstract/scrumElementFactory.hh";
+require_once Config::ROOT."gateways/issueGateway.hh";
+require_once Config::ROOT."issue.hh";
 
 class IssueFactory extends ScrumElementFactory {
 
