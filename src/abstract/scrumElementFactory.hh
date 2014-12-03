@@ -7,6 +7,6 @@ abstract class ScrumElementFactory {
     
     protected ScrumElementGateway $gate;
 
-    public function createAll(): Vector<ScrumElement>;
-    public function createByUser(User $user): Vector<ScrumElement>;
+    abstract protected function createAll(): Vector<ScrumElement>;
+    abstract protected function createByUser(User $user): Vector<ScrumElement>;
 }

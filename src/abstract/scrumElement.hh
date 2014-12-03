@@ -10,8 +10,8 @@ abstract class ScrumElement {
     protected Severity $severity;
     protected Priority $priority;
     protected Status $status;
-    protected Date $createDate;
-    protected Date $assignDate;
+    protected DateTime $createDate;
+    protected DateTime $assignDate;
     protected User $assignee;
     protected Set<string> $history;
     
@@ -31,11 +31,11 @@ abstract class ScrumElement {
         $this->status = $status;
     }
     
-    public function setCreateDate(Date $create): void {
+    public function setCreateDate(DateTime $create): void {
         $this->createDate = $create;
     }
     
-    public function setAssignDate(Date $assign): void {
+    public function setAssignDate(DateTime $assign): void {
         $this->assignDate = $assign;
     }
     
@@ -63,11 +63,11 @@ abstract class ScrumElement {
         return $this->status;
     }
     
-    public function getCreateDate(): Date {
+    public function getCreateDate(): DateTime {
         return $this->createDate;
     }
     
-    public function getAssignDate(): Date {
+    public function getAssignDate(): DateTime {
         return $this->assignDate;
     }
     
