@@ -11,11 +11,11 @@ class TaskFactory extends ScrumElementFactory {
         $this->gate = new TaskGateway();
     }
     
-    public function createAll(): Vector<Task> {
+    public function createAll(): Vector<ScrumElement> {
         
     }
     
-    public function createByUser(User $user): Vector<Task> {
+    public function createByUser(User $user): Vector<ScrumElement> {
     
     }
 }

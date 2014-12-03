@@ -11,11 +11,13 @@ class IssueFactory extends ScrumElementFactory {
         $this->gate = new IssueGateway();
     }
     
-    public function createAll(): Vector<Issue> {
-        
+    public function createAll(): Vector<ScrumElement> {
+        $is = new Issue();
+        return Vector {$is};
     }
     
-    public function createByUser(User $user): Vector<Issue> {
-    
+    public function createByUser(User $user): Vector<ScrumElement> {
+        $is = new Issue();
+        return Vector {$is};
     }
 }
