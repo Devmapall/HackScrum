@@ -19,7 +19,7 @@ class TaskFactory extends ScrumElementFactory {
         
         foreach($vec as $val) {
             $obj = new Task();
-            $obj->setID($val->ID);
+            $obj->setID((int)$val->ID);
             $obj->setTitle($val->title);
             $obj->setText($val->text);
             $obj->setSeverity(Severity::assert((int)$val->severity));
