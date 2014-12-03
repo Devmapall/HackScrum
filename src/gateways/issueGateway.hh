@@ -10,7 +10,7 @@ class IssueGateway extends ScrumElementGateway {
 
     public function getAll(): Vector<stdClass> {
         $sql = "SELECT * FROM issues;";
-        $stmt = $this->pdo->query($sql);
+        $stmt = $this->scrum->query($sql);
         $return = Vector {};
         
         foreach($stmt->fetchObject as $obj) {
@@ -23,7 +23,7 @@ class IssueGateway extends ScrumElementGateway {
     public function getByUser(User $user): Vector<stdClass> {
         $id = $user->getID();
         $sql = "SELECT * FROM issues";
-        $stmt = $this->pdo->query($sql);
+        $stmt = $this->scrum->query($sql);
         $return = Vector {};
         
         foreach($stmt->fetchObject as $obj) {
