@@ -6,8 +6,8 @@ abstract class AbstractGateway {
 	protected PDO $scrum;
 
 	public function __construct() {
-		$this->auth = new PDO("mysql:host=localhost;dbname=auth","root","uUQ8h8LY");
-		$this->scrum = new PDO("mysql:host=localhost;dbname=scrum","root","uUQ8h8LY");
+		$this->auth = new PDO(AUTHDB_DSN,AUTHDB_USER,AUTHDB_PASS);
+		$this->scrum = new PDO(SCRUMDB_DSN,SCRUMDB_USER,SCRUMDB_PASS);
 	}
 
 }
