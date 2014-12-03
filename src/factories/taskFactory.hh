@@ -11,11 +11,10 @@ class TaskFactory extends ScrumElementFactory {
     }
     
     public function createAll(): Vector<ScrumElement> {
-        var_dump($this->gate);
         $vec = $this->gate->getAll();
-        var_dump($vec);
-        $t = new Task();
-        return Vector{$t};
+        foreach($vec as $val) {
+            echo $val."\n";
+        }
     }
     
     public function createByUser(User $user): Vector<ScrumElement> {
