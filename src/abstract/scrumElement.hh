@@ -21,7 +21,7 @@ abstract class ScrumElement {
         $this->severity = Severity::IDEA;
         $this->priority = Priority::VERY_LOW;
         $this->status = Status::OPEN;
-        $this->createDate = new DateTime();
+        $this->createDate = new DateTime("now,DateTimeZone::Europe);
         $this->assignDate = new DateTime();
         $this->assignee = new User();
         $this->history = new Set(null);
