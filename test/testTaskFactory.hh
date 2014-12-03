@@ -3,7 +3,7 @@
 class TestTaskFactory extends TestCase {
 
 	private TaskFactory $fac;
-        private Task $t;
+        private ScrumElement $t;
 
         public function __construct() {
             parent::__construct();
@@ -25,7 +25,7 @@ class TestTaskFactory extends TestCase {
 	public function testCreateAll() {
             $vec = $this->fac->createAll();
             $this->t = $vec[0];
-            var_dump($this->t);
+            $this->t->task();
             
         }
 }
