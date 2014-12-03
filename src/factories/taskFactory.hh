@@ -7,7 +7,6 @@ require_once Config::ROOT."task.hh";
 class TaskFactory extends ScrumElementFactory {
 
     public function __construct() {
-        parent::__construct();
         $this->gate = new TaskGateway();
     }
     
