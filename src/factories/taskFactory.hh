@@ -3,6 +3,9 @@
 require_once Config::ROOT."abstract/scrumElementFactory.hh";
 require_once Config::ROOT."gateways/taskGateway.hh";
 require_once Config::ROOT."task.hh";
+require_once Config::ROOT."enum/severity.hh";
+require_once Config::ROOT."enum/priority.hh";
+require_once Config::ROOT."enum/status.hh";
 
 class TaskFactory extends ScrumElementFactory {
 
@@ -22,7 +25,7 @@ class TaskFactory extends ScrumElementFactory {
             $obj->setID((int)$val->ID);
             $obj->setTitle($val->title);
             $obj->setText($val->text);
-            $obj->setSeverity(Severity::coerce((int)$val->severity));
+            $obj->setSeverity(Severity::assert((int)$val->severity));
             $obj->setPriority(Priority::assert((int)$val->priority));
             $obj->setStatus(Status::assert((int)$val->status));
             $obj->setAssignee($this->ufac->getUserByID((int)$val->assignee));
