@@ -1,7 +1,7 @@
 <?hh //partial
 
-require_once "/var/www/hack/scrum/src/project.hh";
-require_once "projectGateway.hh";
+require_once ROOT."project.hh";
+require_once ROOT."gateways/projectGateway.hh";
 
 class ProjectFactory {
 

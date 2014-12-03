@@ -1,7 +1,7 @@
 <?hh //partial
 
-require_once "/var/www/hack/scrum/src/user.hh";
-require_once "userGateway.hh";
+require_once ROOT."user.hh";
+require_once ROOT."gateways/userGateway.hh";
 
 class UserFactory {
 

@@ -1,6 +1,7 @@
 <?hh //partial
 
 //TODO: Check user permissions!
+define("ROOT","/var/www/hack/scrum/src/");
 
 if(isset($_POST['action'])) {
 

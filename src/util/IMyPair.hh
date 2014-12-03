@@ -1,5 +1,0 @@
-<?hh //strict
-
-interface IMyPair {
-	
-}
