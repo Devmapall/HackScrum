@@ -12,10 +12,12 @@ class TaskFactory extends ScrumElementFactory {
     }
     
     public function createAll(): Vector<ScrumElement> {
-        
+        $t = new Task();
+        return Vector {$t};
     }
     
     public function createByUser(User $user): Vector<ScrumElement> {
-    
+        $t = new Task();
+        return Vector {$t};
     }
 }
