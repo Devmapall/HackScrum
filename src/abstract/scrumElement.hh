@@ -15,6 +15,7 @@ abstract class ScrumElement {
     protected DateTime $assignDate;
     protected User $assignee;
     protected Set<string> $history;
+    protected User $creator;
     
     public function __construct() {
         $this->ID = -1;
@@ -25,6 +26,7 @@ abstract class ScrumElement {
         $this->assignDate = new DateTime();
         $this->assignee = new User();
         $this->history = new Set(null);
+        $this->creator = new User();
     }
     
     public function setID(int $ID): void {
@@ -59,6 +61,10 @@ abstract class ScrumElement {
         $this->history = $history;
     }
     
+    public function setCreator(User $creator): void {
+        $this->creator = $creator;
+    }
+    
     public function getID(): int {
         return $this->ID;
     }
@@ -87,7 +93,12 @@ abstract class ScrumElement {
         return $this->history;
     }
     
+    public function getCreator(): User {
+        return $this->creator;
+    }
+    
     public function addHistory(string $val): void {
         $this->history->add($val);
     }
+    
 }
