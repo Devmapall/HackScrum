@@ -25,8 +25,8 @@ class TaskFactory extends ScrumElementFactory {
             $obj->setSeverity(Severity::assert((int)$val->severity));
             $obj->setPriority(Priority::assert((int)$val->priority));
             $obj->setStatus(Status::assert((int)$val->status));
-            $obj->setAssignee($ufac->getUserById((int)$val->assignee));
-            $obj->setCreator($ufac->getUserById((int)$val->created_by));
+            $obj->setAssignee($this->ufac->getUserById((int)$val->assignee));
+            $obj->setCreator($this->ufac->getUserById((int)$val->created_by));
             $date = new DateTime();
             $obj->setCreateDate($date->setTimestamp(strtotime($val->create_date)));
             $obj->setAssignDate($date->setTimestamp(strtotime($val->assign_date)));

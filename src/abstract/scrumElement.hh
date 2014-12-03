@@ -8,6 +8,8 @@ require_once Config::ROOT."user.hh";
 abstract class ScrumElement {
 
     protected int $ID;
+    protected string $title;
+    protected string $text;
     protected Severity $severity;
     protected Priority $priority;
     protected Status $status;
@@ -27,6 +29,8 @@ abstract class ScrumElement {
         $this->assignee = new User();
         $this->history = new Set(null);
         $this->creator = new User();
+        $this->title = "";
+        $this->text = "";
     }
     
     public function setID(int $ID): void {
@@ -65,6 +69,14 @@ abstract class ScrumElement {
         $this->creator = $creator;
     }
     
+    public function setTitle(string $title): void {
+        $this->title = $title;
+    }
+    
+    public function setText(string $text): void {
+        $this->text = $text;
+    }
+    
     public function getID(): int {
         return $this->ID;
     }
@@ -95,6 +107,14 @@ abstract class ScrumElement {
     
     public function getCreator(): User {
         return $this->creator;
+    }
+    
+    public function getTitle(): string {
+        return $this->title;
+    }
+    
+    public function getText(): string {
+        return $this->text;
     }
     
     public function addHistory(string $val): void {
