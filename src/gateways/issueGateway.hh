@@ -30,6 +30,6 @@ class IssueGateway extends ScrumElementGateway {
             $return[] = $obj;
         }
         
-        return $return
+        return $return;
     }
 }

@@ -2,7 +2,7 @@
 
 require_once ROOT."abstract/scrumElementFactory.hh";
 require_once ROOT."gateways/issueGateway.hh";
-require_ocne ROOT."issue.hh";
+require_once ROOT."issue.hh";
 
 class IssueFactory extends ScrumElementFactory {
 
