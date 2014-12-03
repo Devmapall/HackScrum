@@ -1,7 +1,7 @@
 <?hh //partial
 
 //TODO: Check user permissions!
-define("ROOT","/var/www/hack/scrum/src/");
+require_once "src/config.hh";
 
 if(isset($_POST['action'])) {
 
