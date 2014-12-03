@@ -12,6 +12,7 @@ class TaskFactory extends ScrumElementFactory {
     }
     
     public function createAll(): Vector<ScrumElement> {
+        var_dump($this->gate);
         $vec = $this->gate->getAll();
         var_dump($vec);
         $t = new Task();
