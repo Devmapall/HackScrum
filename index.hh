@@ -1,5 +1,7 @@
 <?hh //partial
 
+date_default_timezone_set("Europe/Berlin");)
+
 //TODO: Check user permissions!
 require_once "runtime.hh";
 
