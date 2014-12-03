@@ -3,6 +3,7 @@
 require_once ROOT."enum/severity.hh";
 require_once ROOT."enum/priority.hh";
 require_once ROOT."enum/status.hh";
+require_once ROOT."user.hh";
 
 abstract class ScrumElement {
 
@@ -14,6 +15,17 @@ abstract class ScrumElement {
     protected DateTime $assignDate;
     protected User $assignee;
     protected Set<string> $history;
+    
+    public function __construct() {
+        $this->ID = -1;
+        $this->severity = Severity::UNKNOWN;
+        $this->priority = Priority::UNDEFINED;
+        $this->status = Status::OPEN;
+        $this->createDate = new DateTime();
+        $this->assignDate = new DateTime();
+        $this->assignee = new User();
+        $this->history = new Set(null);
+    }
     
     public function setID(int $ID): void {
         $this->ID = $ID;
