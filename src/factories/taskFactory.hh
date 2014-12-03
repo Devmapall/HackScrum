@@ -15,6 +15,7 @@ class TaskFactory extends ScrumElementFactory {
         foreach($vec as $val) {
             echo $val."\n";
         }
+        return Vector{new Task()};
     }
     
     public function createByUser(User $user): Vector<ScrumElement> {
