@@ -20,7 +20,6 @@ class TaskFactory extends ScrumElementFactory {
         //UNSAFE
         $vec = $this->gate->getAll();
         $ret = Vector{};
-        var_dump(Severity::NOTICE);
         
         foreach($vec as $val) {
             $obj = new Task();
