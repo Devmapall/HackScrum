@@ -1,4 +1,4 @@
-<?hh //strict
+<?hh //partial
 
 require_once Config::ROOT."abstract/scrumElementFactory.hh";
 require_once Config::ROOT."gateways/taskGateway.hh";
