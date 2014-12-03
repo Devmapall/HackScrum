@@ -17,6 +17,7 @@ class TaskFactory extends ScrumElementFactory {
     }
     
     public function createAll(): Vector<ScrumElement> {
+        //UNSAFE
         $vec = $this->gate->getAll();
         $ret = Vector{};
         var_dump(Severity::NOTICE);
