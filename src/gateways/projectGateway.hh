@@ -1,4 +1,4 @@
-<?hh //strict
+<?hh //partial
 
 require_once "/var/www/hack/scrum/src/util/AbstractGateway.hh";
 
