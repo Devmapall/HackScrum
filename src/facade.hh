@@ -34,7 +34,7 @@ class ScrumFacade {
 		$gate->addProject($p);
 	}
 
-        public function getProjects(string $sso) {
+        public function getProjects(string $sso) :void {
                 $fac = new UserFactory();
                 $user = $fac->getUserBySSO($sso);
                 $pfac = new ProjectFactory();
