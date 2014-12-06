@@ -2,6 +2,7 @@
 
 require_once Config::ROOT."project.hh";
 require_once Config::ROOT."gateways/projectGateway.hh";
+require_once Config::ROOT."factories/userFactory.hh";
 
 class ProjectFactory {
 
@@ -20,4 +21,28 @@ class ProjectFactory {
 	private function create() {
 		
 	}
+
+        public function getProjectsByUser(User $user) :Vector<Project> {
+                $vec = $this->gate->getByUser($user);
+                $ufac = new UserFactory();
+                $ret = Vector{};
+
+                foreach($vec as $val) {
+                    $p = new Project();
+                    $pa = $this->getParticipants($val->ID);
+                    $uvec = Vector{};
+                    foreach($pa as $u) {
+                        $user = $ufac->getUserByName($u);
+                        $uvec[] = $user;
+                    }
+                    
+                    $p->addParticipants($uvec);
+                    $p->setTitle($val->title);
+                    $p->setDescription($val->description);
+                    $p->setOwnerByID((int)$val->owner);
+                    $ret[] = $p;
+                }
+
+                return $ret;
+        }
 }
