@@ -1,4 +1,4 @@
-<?hh //strict
+<?hh //partial
 
 require_once "/var/www/hack/scrum/src/util/AbstractGateway.hh";
 
@@ -21,4 +21,29 @@ class ProjectGateway extends AbstractGateway {
 			$this->scrum->query($sql);
 		}
 	}
+
+        public function getByUser(User $u) :Vector<stdClass> {
+                $sql = "SELECT * FROM projects WHERE owner = ".$u->getID().";";
+                $stmt = $this->scrum->query($sql);
+                $return = Vector {};
+        
+                foreach($stmt->fetchObject as $obj) {
+                    $return[] = $obj;
+                }
+        
+                return $return;
+        }
+
+        public function getParticipants(int $pID) :Vector<stdClass> {
+                $sql = "SELECT u.username FROM project_user as pu
+                        INNER JOIN user as u ON (pu.user_id = u.id) WHERE project_id = ".$pID.";";
+                $stmt = $this->scrum->query($sql);
+                $return = Vector {};
+        
+                foreach($stmt->fetchObject as $obj) {
+                    $return[] = $obj;
+                }
+        
+                return $return;
+        }
 }

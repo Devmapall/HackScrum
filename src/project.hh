@@ -34,6 +34,10 @@ class Project {
 		$this->owner = $this->userfac->getUserBySSO($sso);
 	}
 
+        public function setOwnerByID(int $id) :void {
+                $this->owner = $this->userfac->getUserByID($id);
+        }
+
 	public function getTitle() :string { return $this->title; }
 	public function getDescription() :string { return $this->description; }
 	public function getParticipants() :Vector<User> { return $this->participants; }

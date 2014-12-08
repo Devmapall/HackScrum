@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?hh //strict
 
 require_once Config::ROOT."abstract/scrumElementFactory.hh";

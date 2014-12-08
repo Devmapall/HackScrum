@@ -33,4 +33,16 @@ class ScrumFacade {
 		$gate = new ProjectGateway();
 		$gate->addProject($p);
 	}
+
+        public function getProjects(string $sso) :void {
+                $fac = new UserFactory();
+                $user = $fac->getUserBySSO($sso);
+                $pfac = new ProjectFactory();
+                $pvec = $pfac->getProjectsByUser($user);
+                $strvec = Vector{};
+                foreach($pvec as $k=>$prj) {
+                        $strvec[] = $prj->getTitle();
+                }
+                echo "{\"projects\":".json_encode($pvec)."}";
+        }
 }
