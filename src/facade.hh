@@ -2,6 +2,8 @@
 
 require_once Config::ROOT."factories/userFactory.hh";
 require_once Config::ROOT."factories/projectFactory.hh";
+require_once Config::ROOT."enum/severity.hh";
+require_once Config::ROOT."enum/priority.hh";
 
 class ScrumFacade {
 
@@ -44,5 +46,14 @@ class ScrumFacade {
                         $strvec[] = $prj->getTitle();
                 }
                 echo "{\"projects\":".json_encode($strvec)."}";
+        }
+
+        public function getSeverities() :void {
+            $names = Severity::getNames();    
+            var_dump($names);
+        }
+
+        public function getPriorities() :void {
+            
         }
 }
