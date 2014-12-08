@@ -31,7 +31,7 @@ class ProjectGateway extends AbstractGateway {
                 foreach($stmt->fetchObject as $obj) {
                     $return[] = $obj;
                 }
-        
+                var_dump($return);
                 return $return;
         }
 
