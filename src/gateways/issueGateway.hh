@@ -32,4 +32,8 @@ class IssueGateway extends ScrumElementGateway {
         
         return $return;
     }
+
+    public function addIssue(Issue $issue) :void {
+        
+    }
 }

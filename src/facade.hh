@@ -2,8 +2,10 @@
 
 require_once Config::ROOT."factories/userFactory.hh";
 require_once Config::ROOT."factories/projectFactory.hh";
+require_once Config::ROOT."gateway/issueGateway.hh";
 require_once Config::ROOT."enum/severity.hh";
 require_once Config::ROOT."enum/priority.hh";
+require_once Config::ROOT."issue.hh";
 
 class ScrumFacade {
 
@@ -58,5 +60,17 @@ class ScrumFacade {
             //UNSAFE
             $names = Priority::getNames();
             echo "{\"priorities\":".json_encode($names)."}";
+        }
+
+        public function addIssue(string $project, string $severity, string $priority, string $title, string $text) {
+            $gate = new IssueGateway();
+            $pfac = new ProjectFactory();
+            $prj = $pfac->getProjectByName($project);
+            $issue = new Issue();
+            $issue->setProject($prj);
+            $issue->setSeverity(Severity::assert($severity));
+            $issue->setPriority(Priority::assert($priority));
+            $issue->setTitle($title);
+            $issue->setText($text);
         }
 }
