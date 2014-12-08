@@ -23,7 +23,7 @@ class TestTaskFactory extends TestCase {
         }
 
 	public function testCreateAll() {
-            $vec = $this->fac->createAll();
+            $vec = $this->fac->getAll();
             var_dump($vec);
             $this->t = $vec[0];
             
