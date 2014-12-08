@@ -29,10 +29,9 @@ class ProjectGateway extends AbstractGateway {
                 $return = Vector {};
         
                 foreach($stmt->fetchObject as $obj) {
-                    var_dump($obj);
                     $return[] = $obj;
                 }
-                var_dump($return);
+                var_dump($this->scrum);
                 return $return;
         }
 
