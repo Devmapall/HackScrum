@@ -49,11 +49,14 @@ class ScrumFacade {
         }
 
         public function getSeverities() :void {
+            //UNSAFE
             $names = Severity::getNames();    
             var_dump($names);
         }
 
         public function getPriorities() :void {
-            
+            //UNSAFE
+            $names = Priority::getNames();
+            var_dump($names);
         }
 }
