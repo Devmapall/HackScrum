@@ -19,7 +19,7 @@ if(isset($_POST['action'])) {
 					}
 					$facade->addProject($_POST["projectName"],$_POST["projectDescription"],$_COOKIE["sso"],$vec);
 		break;
-                case "getProjects": $facade->getProjects();
+                case "getProjects": $facade->getProjects($sso);
                 break;
 	}
 
