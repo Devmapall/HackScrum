@@ -23,7 +23,7 @@ class ProjectGateway extends AbstractGateway {
 	}
 
         public function getByUser(User $u) :Vector<stdClass> {
-                $sql = "SELECT * FROM projects WHERE owner = ".$u->getID().";";
+                $sql = "SELECT * FROM projects WHERE owner_id = ".$u->getID().";";
                 $stmt = $this->scrum->query($sql);
                 $return = Vector {};
         
