@@ -22,7 +22,7 @@ class TestProjectGateway extends TestCase {
             $this->user = new User();
         }
 
-	public function testgetProjectsByUser() {
+	public function testGetProjectsByUser() {
             $this->user->setID(1);
             $vec = $this->gate->getByUser($this->user);
             var_dump($vec);
