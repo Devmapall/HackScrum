@@ -39,7 +39,6 @@ class ScrumFacade {
                 $user = $fac->getUserBySSO($sso);
                 $pfac = new ProjectFactory();
                 $pvec = $pfac->getProjectsByUser($user);
-                var_dump($pvec);
                 $strvec = Vector{};
                 foreach($pvec as $k=>$prj) {
                         $strvec[] = $prj->getTitle();
