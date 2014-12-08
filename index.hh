@@ -21,6 +21,10 @@ if(isset($_POST['action'])) {
 		break;
                 case "getProjects": $facade->getProjects($sso);
                 break;
+                case "getSeverities": $facade->getSeverities();
+                break;
+                case "getPriorities": $facade->getPriorities();
+                break;
 	}
 
 }
