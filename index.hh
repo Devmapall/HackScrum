@@ -7,6 +7,7 @@ if(isset($_POST['action'])) {
 
 	require_once "src/facade.hh";
 	$action = $_POST['action'];
+        $sso = $_COOKIE['sso'];
 	$facade = new ScrumFacade();
 
 	switch($action) {
@@ -18,6 +19,8 @@ if(isset($_POST['action'])) {
 					}
 					$facade->addProject($_POST["projectName"],$_POST["projectDescription"],$_COOKIE["sso"],$vec);
 		break;
+                case "getProjects": $facade->getProjects();
+                break;
 	}
 
 }
