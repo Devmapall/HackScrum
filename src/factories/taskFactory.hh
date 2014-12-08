@@ -16,7 +16,7 @@ class TaskFactory extends ScrumElementFactory {
         $this->ufac = new UserFactory();
     }
     
-    public function createAll(): Vector<ScrumElement> {
+    public function getAll(): Vector<ScrumElement> {
         //UNSAFE
         $vec = $this->gate->getAll();
         $ret = Vector{};
@@ -39,7 +39,17 @@ class TaskFactory extends ScrumElementFactory {
         return $ret;
     }
     
-    public function createByUser(User $user): Vector<ScrumElement> {
+    public function getAllByUser(User $user): Vector<ScrumElement> {
+        $t = new Task();
+        return Vector {$t};
+    }
+    
+    public function getOpenByUser(User $user): Vector<ScrumElement> {
+        $t = new Task();
+        return Vector {$t};
+    }
+    
+    public function getClosedByUser(User $user): Vector<ScrumElement> {
         $t = new Task();
         return Vector {$t};
     }
