@@ -36,7 +36,7 @@ class ProjectGateway extends AbstractGateway {
 
         public function getParticipants(int $pID) :Vector<stdClass> {
                 $sql = "SELECT u.username FROM project_user as pu
-                        INNER JOIN user as u ON (pu.user_id = u.id) WHERE project_id = ".$pID.";";
+                        INNER JOIN auth.user as u ON (pu.user_id = u.id) WHERE project_id = ".$pID.";";
                 $stmt = $this->scrum->query($sql);
                 $return = Vector {};
         
