@@ -29,6 +29,7 @@ class ProjectFactory {
 
                 foreach($vec as $val) {
                     $p = new Project();
+                    var_dump($vec);
                     $pa = $this->gate->getParticipants($val->ID);
                     $uvec = Vector{};
                     foreach($pa as $u) {
