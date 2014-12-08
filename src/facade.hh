@@ -51,12 +51,12 @@ class ScrumFacade {
         public function getSeverities() :void {
             //UNSAFE
             $names = Severity::getNames();    
-            var_dump($names);
+            echo "{\"severities\":".json_encode($names)."}";
         }
 
         public function getPriorities() :void {
             //UNSAFE
             $names = Priority::getNames();
-            var_dump($names);
+            echo "{\"priorities\":".json_encode($names)."}";
         }
 }
