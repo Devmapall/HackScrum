@@ -1,6 +1,6 @@
 <?hh //partial
 
-class TestTaskFactory extends TestCase {
+class TestProjectGateway extends TestCase {
 
 	private ProjectGateway $gate;
 
