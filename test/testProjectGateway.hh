@@ -26,6 +26,6 @@ class TestProjectGateway extends TestCase {
             $this->user->setID(1);
             $vec = $this->gate->getByUser($this->user);
             var_dump($vec);
-            $this->assertEqualsString($vec[0]->title,"Hack IDE");
+            $this->assertEqualsString($vec[0]->name,"Hack IDE");
         }
 }
