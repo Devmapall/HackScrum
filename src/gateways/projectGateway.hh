@@ -28,10 +28,9 @@ class ProjectGateway extends AbstractGateway {
                 $stmt = $this->scrum->query($sql);
                 $return = Vector {};
         
-                foreach($stmt->fetchObject as $obj) {
+                foreach($stmt->fetchObject() as $obj) {
                     $return[] = $obj;
                 }
-                var_dump($this->scrum);
                 return $return;
         }
 
@@ -41,7 +40,7 @@ class ProjectGateway extends AbstractGateway {
                 $stmt = $this->scrum->query($sql);
                 $return = Vector {};
         
-                foreach($stmt->fetchObject as $obj) {
+                foreach($stmt->fetchObject() as $obj) {
                     $return[] = $obj;
                 }
         
