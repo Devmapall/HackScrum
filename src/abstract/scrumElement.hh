@@ -81,15 +81,15 @@ abstract class ScrumElement {
         return $this->ID;
     }
     
-    public function getSeverity(): int {
+    public function getSeverity(): Severity {
         return $this->severity;
     }
     
-    public function getPriority(): int {
+    public function getPriority(): Priority {
         return $this->priority;
     }
     
-    public function getStatus(): int {
+    public function getStatus(): Status {
         return $this->status;
     }
     
