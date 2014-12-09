@@ -73,5 +73,19 @@ class ScrumFacade {
             $issue->setPriority(Priority::assert($priority));
             $issue->setTitle($title);
             $issue->setText($text);
+            $gate->addIssue($issue,$prj->getID());
+        }
+
+        public function addIssue(string $project, string $severity, string $priority, string $title, string $text) :void {
+            //UNSAFE
+            $gate = new TaskGateway();
+            $pfac = new ProjectFactory();
+            $prj = $pfac->getProjectByName($project);
+            $issue = new Task();
+            $issue->setProject($prj);
+            $issue->setSeverity(Severity::assert($severity));
+            $issue->setPriority(Priority::assert($priority));
+            $issue->setTitle($title);
+            $issue->setText($text);
         }
 }
