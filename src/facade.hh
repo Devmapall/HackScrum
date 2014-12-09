@@ -68,12 +68,11 @@ class ScrumFacade {
             $pfac = new ProjectFactory();
             $prj = $pfac->getProjectByName($project);
             $issue = new Issue();
-            $issue->setProject($prj);
             $issue->setSeverity(Severity::assert($severity));
             $issue->setPriority(Priority::assert($priority));
             $issue->setTitle($title);
             $issue->setText($text);
-            $gate->addIssue($issue,$prj->getID());
+            $gate->addIssue($issue,$prj->getID(),$prj->getID());
         }
 
         public function addTask(string $project, string $severity, string $priority, string $title, string $text) :void {
