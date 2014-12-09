@@ -67,10 +67,10 @@ class ScrumFacade {
             $gate = new IssueGateway();
             $pfac = new ProjectFactory();
             $prj = $pfac->getProjectByName($project);
-            $sval = Severity::getValues();
+            $sval = Severity::getNames();
             $pval = Priority::getValues();
             $stval = Status::getValues();
-            var_dump($sval[$severity]);
+            var_dump(Severity::$severity);
             /*$issue = new Issue();
             $issue->setSeverity($sval[$severity]);
             $issue->setPriority($pval[$priority]);
