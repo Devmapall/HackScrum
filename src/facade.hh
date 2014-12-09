@@ -70,7 +70,7 @@ class ScrumFacade {
             $sval = Severity::getNames();
             $pval = Priority::getValues();
             $stval = Status::getValues();
-            var_dump(Severity::$severity);
+            var_dump(Severity::assert($svl[$severity]));
             /*$issue = new Issue();
             $issue->setSeverity($sval[$severity]);
             $issue->setPriority($pval[$priority]);
