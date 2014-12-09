@@ -2,7 +2,7 @@
 
 require_once Config::ROOT."factories/userFactory.hh";
 require_once Config::ROOT."factories/projectFactory.hh";
-require_once Config::ROOT."gateway/issueGateway.hh";
+require_once Config::ROOT."gateways/issueGateway.hh";
 require_once Config::ROOT."enum/severity.hh";
 require_once Config::ROOT."enum/priority.hh";
 require_once Config::ROOT."issue.hh";
