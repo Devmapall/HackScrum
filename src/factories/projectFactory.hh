@@ -59,7 +59,6 @@ class ProjectFactory {
                 }
                 $p->addParticipants($uvec);
                 $p->setTitle($val->name);
-                $p->setText($val->text);
                 $p->setDescription($val->description);
                 $p->setOwnerByID((int)$val->owner_id);
                 return $p;
