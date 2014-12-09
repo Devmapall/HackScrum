@@ -45,4 +45,23 @@ class ProjectFactory {
 
                 return $ret;
         }
+
+        public function getProjectByName(string $name) :Project {
+                $vec = $this->gate->getByName($name);
+                $val = $vec[0];
+                $ufac = new UserFactory();
+                $uvec = Vector{};
+                $p = new Project();
+                $pa = $this->gate->getParticipants((int)$val->ID);
+                foreach($pa as $u) {
+                    $user = $ufac->getUserByName($u->username);
+                    $uvec[] = $user;
+                }
+                $p->addParticipants($uvec);
+                $p->setTitle($val->name);
+                $p->setText($val->text);
+                $p->setDescription($val->description);
+                $p->setOwnerByID((int)$val->owner_id);
+                return $p;
+        }
 }
