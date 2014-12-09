@@ -46,4 +46,11 @@ class ProjectGateway extends AbstractGateway {
         
                 return $return;
         }
+
+        public function getProjectIDByName(string $name) :int {
+                $sql = "SELECT ID FROM projects WHERE name = '".$name."';";
+                $stmt = $this->scrum->query($sql);
+                $row = $stmt->fetchObject();
+                return $row[0]->ID;
+        }
 }
