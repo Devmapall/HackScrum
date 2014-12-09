@@ -67,7 +67,7 @@ class ScrumFacade {
             $gate = new IssueGateway();
             $pfac = new ProjectFactory();
             $prj = $pfac->getProjectByName($project);
-            $sval = Severity::getNames();
+            $sval = Severity::getValues();
             $pval = Priority::getValues();
             $stval = Status::getValues();
             var_dump(Severity::assert($sval[$severity]));
