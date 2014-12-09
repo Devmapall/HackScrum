@@ -76,7 +76,7 @@ class ScrumFacade {
             $gate->addIssue($issue,$prj->getID());
         }
 
-        public function addIssue(string $project, string $severity, string $priority, string $title, string $text) :void {
+        public function addTask(string $project, string $severity, string $priority, string $title, string $text) :void {
             //UNSAFE
             $gate = new TaskGateway();
             $pfac = new ProjectFactory();
