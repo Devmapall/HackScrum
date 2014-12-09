@@ -35,7 +35,13 @@ class IssueGateway extends ScrumElementGateway {
 
     public function addIssue(Issue $issue, int $prj_id) :void {
         $sql = "INSERT INTO issues (title,text,created,project_id,severity,priority,status,assigned,assignee,creator) VALUES 
-                ('".$issue->getTitle()."', '".$issue->getText()."', NOW(), ".$prj_id.", ".$issue->getSeverity().", ".$issue->getPriority().", ".$issue->getStatus().", 
+                ('".$issue->getTitle()."', 
+                '".$issue->getText()."', 
+                NOW(), 
+                ".$prj_id.", 
+                ".$issue->getSeverity().", 
+                ".$issue->getPriority().", 
+                ".$issue->getStatus().", 
                 NULL,NULL,".$issue->getCreator()->getID().");";
         $this->scrum->query($sql);
     }
