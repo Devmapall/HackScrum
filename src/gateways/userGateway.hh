@@ -34,6 +34,7 @@ WHERE s.ID = 3;");
         
         public function getUserByID(int $id):string {
 		$stmt = $this->auth->query("select username from auth.user where id = '".$id."';");
-		return (string)$stmt->fetchObject()->username;
+                $row = $stmt->fetchObject();
+		return (string)$row[0]->username;
 	}
 }

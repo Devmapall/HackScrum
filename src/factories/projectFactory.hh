@@ -39,7 +39,7 @@ class ProjectFactory {
                     $p->addParticipants($uvec);
                     $p->setTitle($val->name);
                     $p->setDescription($val->description);
-                    $p->setOwnerByID((int)$val->owner);
+                    $p->setOwnerByID((int)$val->owner_id);
                     $ret[] = $p;
                 }
 
