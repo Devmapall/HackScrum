@@ -71,13 +71,13 @@ class ScrumFacade {
             $pval = Priority::getValues();
             $stval = Status::getValues();
             var_dump($sval);
-            $issue = new Issue();
+            /*$issue = new Issue();
             $issue->setSeverity($sval[$severity]);
             $issue->setPriority($pval[$priority]);
             $issue->setStatus($stval[$status]);
             $issue->setTitle($title);
             $issue->setText($text);
-            $gate->addIssue($issue,$prj->getID(),$prj->getID());
+            $gate->addIssue($issue,$prj->getID(),$prj->getID());*/
         }
 
         public function addTask(string $project, string $severity, string $priority, string $title, string $text) :void {
