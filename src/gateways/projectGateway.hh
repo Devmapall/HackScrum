@@ -53,4 +53,16 @@ class ProjectGateway extends AbstractGateway {
                 $row = $stmt->fetchObject();
                 return $row[0]->ID;
         }
+
+        public function getByName(string $name) :Vector<stdClass> {
+                $sql = "SELECT * FROM projects WHERE name = '".$name."'";
+                $stmt = $this->scrum->query($sql);
+                $return = Vector {};
+        
+                while($obj = $stmt->fetchObject()) {
+                    $return[] = $obj;
+                }
+        
+                return $return;
+        }
 }
