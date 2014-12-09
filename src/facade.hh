@@ -62,7 +62,8 @@ class ScrumFacade {
             echo "{\"priorities\":".json_encode($names)."}";
         }
 
-        public function addIssue(string $project, string $severity, string $priority, string $title, string $text) {
+        public function addIssue(string $project, string $severity, string $priority, string $title, string $text) :void {
+            //UNSAFE
             $gate = new IssueGateway();
             $pfac = new ProjectFactory();
             $prj = $pfac->getProjectByName($project);
