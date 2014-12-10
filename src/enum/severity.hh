@@ -1,6 +1,7 @@
 <?hh //strict
 
 enum Severity: int {
+    UNKNOWN = -1;
     IDEA = 0;
     NOTICE = 1;
     WARNING = 2;
@@ -10,30 +11,32 @@ enum Severity: int {
 class EnumSeverity {
 
     public static function fromInt(int $value) :Severity {
-        $sev;
         switch($value) {
-            case 0: $sev = Severity::IDEA;
+            case 0: return Severity::IDEA;
                 break;
-            case 1: $sev = Severity::NOTICE;
+            case 1: return Severity::NOTICE;
                 break;
-            case 2: $sev = Severity::WARNING;
+            case 2: return Severity::WARNING;
                 break;
-            case 3: $sev = Severity::CRITICAL;
+            case 3: return Severity::CRITICAL;
+                break;
+            default: return Severity::UNKNOWN;
                 break;
         }
     }
     
     public static function fromString(string $name) :Severity {
-        $sev;
+
         switch($name) {
-            case "IDEA": $sev = Severity::IDEA;
+            case "IDEA": return Severity::IDEA;
                 break;
-            case "NOTICE": $sev = Severity::NOTICE;
+            case "NOTICE": return Severity::NOTICE;
                 break;
-            case "WARNING": $sev = Severity::WARNING;
+            case "WARNING": return Severity::WARNING;
                 break;
-            case "CRITICAL": $sev = Severity::CRITICAL;
+            case "CRITICAL": return Severity::CRITICAL;
                 break;
+            default: return Severity::UNKNOWN;
         }
     }
 }
