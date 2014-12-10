@@ -5,7 +5,7 @@ require_once Config::ROOT."abstract/JSON.hh";
 
 class Issue extends ScrumElement {
 
-    public function toJSON() {
+    public function toJSON() :string {
         $sev = Severity::getNames();
         $prio = Priority::getNames();
         $stat = Status::getNames();
