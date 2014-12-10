@@ -4,8 +4,9 @@ require_once Config::ROOT."enum/severity.hh";
 require_once Config::ROOT."enum/priority.hh";
 require_once Config::ROOT."enum/status.hh";
 require_once Config::ROOT."user.hh";
+require_once Config::ROOT."abstract/JSON.hh";
 
-abstract class ScrumElement {
+abstract class ScrumElement implements JSON {
 
     protected int $ID;
     protected string $title;
@@ -120,4 +121,6 @@ abstract class ScrumElement {
     public function addHistory(string $val): void {
         $this->history->add($val);
     }
+    
+    abstract public function toJSON() :string;
 }

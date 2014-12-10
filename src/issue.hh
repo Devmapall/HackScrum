@@ -3,7 +3,7 @@
 require_once Config::ROOT."abstract/scrumElement.hh";
 require_once Config::ROOT."abstract/JSON.hh";
 
-class Issue extends ScrumElement implements JSON {
+class Issue extends ScrumElement {
 
     public function toJSON() {
         $sev = Severity::getNames();
