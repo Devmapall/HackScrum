@@ -71,7 +71,7 @@ class ScrumFacade {
             $issue = new Issue();
             $issue->setSeverity(EnumSeverity::fromString($severity));
             $issue->setPriority(EnumPriority::fromString($priority));
-            $issue->setStatus(EnumStatus::fromString($status));
+            $issue->setStatus(Status::OPEN);
             $issue->setTitle($title);
             $issue->setText($text);
             $gate->addIssue($issue,$prj->getID(),$prj->getID());
