@@ -8,7 +8,6 @@ require_once Config::ROOT."factories/issueFactory.hh";
 class IssueFactory extends ScrumElementFactory {
 
     public function __construct() {
-        parent::__construct();
         $this->gate = new IssueGateway();
     }
     
