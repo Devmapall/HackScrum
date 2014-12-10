@@ -28,6 +28,7 @@ class Issue extends ScrumElement implements JSON {
                     \"creator\":\"".$this->creator->getUsername()."\",
                     \"title\":\"".$this->title."\",
                     \"assigned\":\"".$assigned."\",
-                    \"text\":\"".$this->text."\"}";
+                    \"text\":\"".$this->text."\",
+                    \"Type\":\"Issue\"}";
     }
 }
