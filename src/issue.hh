@@ -9,6 +9,11 @@ class Issue extends ScrumElement implements JSON {
         $sev = Severity::getNames();
         $prio = Priority::getNames();
         $stat = Status::getNames();
+        $ass = ($this->assignee->getUsername()!=="");
+        $assigned = "No";
+        if($ass) {
+            $assigned = "YES";
+        }
         
         return  "\"issue\":{  \"ID\":\"".$this->ID."\",
                     \"severity\":\"".$sev[$this->severity]."\",
@@ -19,7 +24,7 @@ class Issue extends ScrumElement implements JSON {
                     \"assignee\":\"".$this->assignee->getUsername()."\",
                     \"creator\":\"".$this->creator->getUsername()."\",
                     \"title\":\"".$this->title."\",
-                    \"assigned\":\"".($this->assignee->getUsername()==="")."\",
+                    \"assigned\":\"".."\",
                     \"text\":\"".$this->text."\"}";
     }
 }
