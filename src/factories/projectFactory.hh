@@ -36,6 +36,7 @@ class ProjectFactory {
                         $uvec[] = $user;
                     }
                     
+                    $p->setID((int)$val->ID);
                     $p->addParticipants($uvec);
                     $p->setTitle($val->name);
                     $p->setDescription($val->description);
@@ -57,6 +58,7 @@ class ProjectFactory {
                     $user = $ufac->getUserByName($u->username);
                     $uvec[] = $user;
                 }
+                $p->setID((int)$val->ID);
                 $p->addParticipants($uvec);
                 $p->setTitle($val->name);
                 $p->setDescription($val->description);
