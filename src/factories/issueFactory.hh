@@ -44,7 +44,7 @@ class IssueFactory extends ScrumElementFactory {
             $i->setStatus(EnumStatus::fromInt((int)$val->status));
             $i->setTitle($val->title);
             $i->setText($val->text);
-            $i->setCreator($ufac->getUserByID((int)$val->ID));
+            $i->setCreator($ufac->getUserByID((int)$val->creator));
             $i->setCreateDate(new DateTime($val->create_date));
             $i->setAssignDate(new DateTime($val->assign_date));
             $i->setAssignee($ufac->getUserByID((int)$val->assignee));
