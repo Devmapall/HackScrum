@@ -111,4 +111,10 @@ class ScrumFacade {
         public function getTasksByUser(string $sso) :void {
         
         }
+        
+        public function getIssue(int $id) :void {
+            $fac = new IssueFactory();
+            $vec = $fac->getIssueByID($id);
+            echo "{\"issue\":{".$vec[0]->toJSON."}";
+        }
 }

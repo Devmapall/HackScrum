@@ -35,6 +35,7 @@ if(isset($_POST['action'])) {
                 break;
                 case "getUnassignedIssues": $facade->getUnassignedIssues();
                 break;
+                case "getIssue": $facade->getIssueByID($_POST["ID"]);
 	}
 
 }
