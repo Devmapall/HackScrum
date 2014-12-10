@@ -13,6 +13,9 @@ class Issue extends ScrumElement implements JSON {
         $assigned = "No";
         if($ass) {
             $assigned = "YES";
+            $assDate = $this->assignDate->format("d.m.Y H:i");
+        } else {
+            $assDate = "-";
         }
         
         return  "\"issue\":{  \"ID\":\"".$this->ID."\",
@@ -20,7 +23,7 @@ class Issue extends ScrumElement implements JSON {
                     \"priority\":\"".$prio[$this->priority]."\",
                     \"status\":\"".$stat[$this->status]."\",
                     \"createDate\":\"".$this->createDate->format("d.m.Y H:i")."\",
-                    \"assignDate\":\"".$this->assignDate->format("d.m.Y H:i")."\",
+                    \"assignDate\":\"".$assDate."\",
                     \"assignee\":\"".$this->assignee->getUsername()."\",
                     \"creator\":\"".$this->creator->getUsername()."\",
                     \"title\":\"".$this->title."\",
