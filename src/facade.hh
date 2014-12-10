@@ -62,10 +62,11 @@ class ScrumFacade {
             echo "{\"priorities\":".json_encode($names)."}";
         }
 
-        public function addIssue(string $project, string $severity, string $priority, string $title, string $text) :void {
+        public function addIssue(string $project, string $severity, string $priority, string $title, string $text, string $sso) :void {
             //UNSAFE
             $gate = new IssueGateway();
             $pfac = new ProjectFactory();
+            $ufac = new UserFactory();
             $prj = $pfac->getProjectByName($project);
             var_dump($sval);
             $issue = new Issue();
@@ -74,10 +75,11 @@ class ScrumFacade {
             $issue->setStatus(Status::OPEN);
             $issue->setTitle($title);
             $issue->setText($text);
-            $gate->addIssue($issue,$prj->getID(),$prj->getID());
+            $issue->setCreator($ufac->getUserBySSO($sso));
+            $gate->addIssue($issue,$prj->getID());
         }
 
-        public function addTask(string $project, string $severity, string $priority, string $title, string $text) :void {
+        public function addTask(string $project, string $severity, string $priority, string $title, string $text, string $sso) :void {
             //UNSAFE
             $gate = new TaskGateway();
             $pfac = new ProjectFactory();

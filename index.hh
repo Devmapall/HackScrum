@@ -25,9 +25,9 @@ if(isset($_POST['action'])) {
                 break;
                 case "getPriorities": $facade->getPriorities();
                 break;
-                case "addIssue": $facade->addIssue($_POST["project"], $_POST["severity"], $_POST["priority"], $_POST["title"], $_POST["text"]);
+                case "addIssue": $facade->addIssue($_POST["project"], $_POST["severity"], $_POST["priority"], $_POST["title"], $_POST["text"], $sso);
                 break;
-                case "addTask": $facade->addIssue($_POST["project"], $_POST["severity"], $_POST["priority"], $_POST["title"], $_POST["text"]);
+                case "addTask": $facade->addTask($_POST["project"], $_POST["severity"], $_POST["priority"], $_POST["title"], $_POST["text"], $sso);
                 break;
                 case "getMyIssues": $facade->getIssuesByUser($sso);
                 break;
