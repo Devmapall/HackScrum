@@ -34,7 +34,12 @@ class TaskGateway extends ScrumElementGateway {
     }
     
     public function getUnassigned() :Vector<stdClass> {
-        $t = new Task;
-        return Vector{$t};
+        $sql = "SELECT * FROM tasks WHERE assignee is NULL;";
+        $stmt = $this->scrum->query($sql);
+        $return = Vector{};
+        while($row = $stmt->fetchObj()) {
+            $return[] = $row;
+        }
+        return $return;
     }
 }
