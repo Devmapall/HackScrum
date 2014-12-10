@@ -57,4 +57,14 @@ class IssueGateway extends ScrumElementGateway {
                 NULL,NULL,".$issue->getCreator()->getID().");";
         $this->scrum->query($sql);
     }
+    
+    public function getByID(int $id) {
+        $sql = "SELECT * FROM issues WHERE ID = ".$id.";";
+        $stmt = $this->scrum->query($sql);
+        $return = Vector{};
+        while($row = $stmt->fetchObject()) {
+            $return[] = $row;
+        }
+        return $return;
+    }
 }

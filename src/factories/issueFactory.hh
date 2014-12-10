@@ -64,4 +64,21 @@ class IssueFactory extends ScrumElementFactory {
             $issue->setCreator($user);
             return $issue;
     }
+    
+    public function getIssueByID(int $id) {
+        $vec = $this->gate->getByID($id);
+        $val = $vec[0];
+        $i = new Issue();
+        $i->setID((int)$val->ID);
+        $i->setSeverity(EnumSeverity::fromInt((int)$val->severity));
+        $i->setPriority(EnumPriority::fromInt((int)$val->priority));
+        $i->setStatus(EnumStatus::fromInt((int)$val->status));
+        $i->setTitle($val->title);
+        $i->setText($val->text);
+        $i->setCreator($ufac->getUserByID((int)$val->creator));
+        $i->setCreateDate(new DateTime($val->create_date));
+        $i->setAssignDate(new DateTime($val->assign_date));
+        $i->setAssignee($ufac->getUserByID((int)$val->assignee));
+        return $i;
+    }
 }
