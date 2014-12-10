@@ -94,7 +94,7 @@ class ScrumFacade {
             $vec = $fac->getUnassigned();
             $strvec = Vector{};
                 foreach($vec as $k=>$iss) {
-                        $strvec[] = $iss->toJSON();
+                        $strvec[] = (Issue)$iss->toJSON();
                 }
             
             echo "{\"issues\":[".implode(",",$strvec)."]}";
