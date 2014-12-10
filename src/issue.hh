@@ -10,7 +10,7 @@ class Issue extends ScrumElement implements JSON {
         $prio = Priority::getNames();
         $stat = Status::getNames();
         $ass = ($this->assignee->getUsername()!=="");
-        $assigned = "No";
+        $assigned = "NO";
         if($ass) {
             $assigned = "YES";
             $assDate = $this->assignDate->format("d.m.Y H:i");
