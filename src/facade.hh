@@ -2,6 +2,8 @@
 
 require_once Config::ROOT."factories/userFactory.hh";
 require_once Config::ROOT."factories/projectFactory.hh";
+require_once Config::ROOT."factories/issueFactory.hh";
+require_once Config::ROOT."factories/taskFactory.hh";
 require_once Config::ROOT."gateways/issueGateway.hh";
 require_once Config::ROOT."enum/severity.hh";
 require_once Config::ROOT."enum/priority.hh";
@@ -65,17 +67,12 @@ class ScrumFacade {
         public function addIssue(string $project, string $severity, string $priority, string $title, string $text, string $sso) :void {
             //UNSAFE
             $gate = new IssueGateway();
+            $ifac = new IssueFactory();
             $pfac = new ProjectFactory();
             $ufac = new UserFactory();
             $prj = $pfac->getProjectByName($project);
             var_dump($sval);
-            $issue = new Issue();
-            $issue->setSeverity(EnumSeverity::fromString($severity));
-            $issue->setPriority(EnumPriority::fromString($priority));
-            $issue->setStatus(Status::OPEN);
-            $issue->setTitle($title);
-            $issue->setText($text);
-            $issue->setCreator($ufac->getUserBySSO($sso));
+            $issue = $ifac->build($severity,$priority,$title,$text,$ufac->getUserBySSO($sso));
             $gate->addIssue($issue,$prj->getID());
         }
 
@@ -90,6 +87,20 @@ class ScrumFacade {
             $issue->setPriority(Priority::assert($priority));
             $issue->setTitle($title);
             $issue->setText($text);
+        }
+        
+        public function getUnassignedIssues() :void {
+            $fac = new IssueFactory();
+            $vec = $fac->getUnassigned();
+            $strvec = Vector{};
+                foreach($vec as $k=>$iss) {
+                        $strvec[] = $iss;
+                }
+            echo "{\"issues\":".json_encode($strvec)."}";
+        }
+        
+        public function getUnassignedTasks() :void {
+        
         }
         
         public function getIssuesByUser(string $sso) :void {

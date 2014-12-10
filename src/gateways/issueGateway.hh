@@ -32,6 +32,16 @@ class IssueGateway extends ScrumElementGateway {
         
         return $return;
     }
+    
+    public function getUnassigned() :Vector<stdClass> {
+        $sql = "SELECT * FROM issues WHERE assignee is NULL;";
+        $stmt = $this->scrum->query($sql);
+        $return = Vector{};
+        while($row = $stmt->fetchObj()) {
+            $return[] = $row;
+        }
+        return $return;
+    }
 
     public function addIssue(Issue $issue, int $prj_id) :void {
         //UNSAFE
