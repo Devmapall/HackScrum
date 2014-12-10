@@ -14,8 +14,10 @@ class Issue extends ScrumElement implements JSON {
         if($ass) {
             $assigned = "YES";
             $assDate = $this->assignDate->format("d.m.Y H:i");
+            $assUser = $this->assignee->getUsername();
         } else {
             $assDate = "-";
+            $assUser = "-";
         }
         
         return  "\"issue\":{  \"ID\":\"".$this->ID."\",
@@ -24,7 +26,7 @@ class Issue extends ScrumElement implements JSON {
                     \"status\":\"".$stat[$this->status]."\",
                     \"createDate\":\"".$this->createDate->format("d.m.Y H:i")."\",
                     \"assignDate\":\"".$assDate."\",
-                    \"assignee\":\"".$this->assignee->getUsername()."\",
+                    \"assignee\":\"".$assUser."\",
                     \"creator\":\"".$this->creator->getUsername()."\",
                     \"title\":\"".$this->title."\",
                     \"assigned\":\"".$assigned."\",
