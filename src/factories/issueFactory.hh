@@ -4,6 +4,7 @@ require_once Config::ROOT."abstract/scrumElementFactory.hh";
 require_once Config::ROOT."gateways/issueGateway.hh";
 require_once Config::ROOT."issue.hh";
 require_once Config::ROOT."factories/issueFactory.hh";
+require_once Config::ROOT."factories/userFactory.hh";
 
 class IssueFactory extends ScrumElementFactory {
 
@@ -66,6 +67,7 @@ class IssueFactory extends ScrumElementFactory {
     }
     
     public function getIssueByID(int $id) {
+        $ufac = new UserFactory();
         $vec = $this->gate->getByID($id);
         $val = $vec[0];
         $i = new Issue();
