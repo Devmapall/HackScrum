@@ -92,6 +92,7 @@ class ScrumFacade {
         public function getUnassignedIssues() :void {
             $fac = new IssueFactory();
             $vec = $fac->getUnassigned();
+            var_dump($vec);
             $strvec = Vector{};
                 foreach($vec as $k=>$iss) {
                         $strvec[] = $iss->toJSON();
