@@ -10,6 +10,15 @@ class Issue extends ScrumElement implements JSON {
         $prio = Priority::getNames();
         $stat = Status::getNames();
         
-        return "{severity:".$sev[$this->severity].",priority:".$prio[$this->priority]."}";
+        return  "{  \"ID\":\"".$this->ID."\",
+                    \"severity\":\"".$sev[$this->severity]."\",
+                    \"priority\":\"".$prio[$this->priority]."\",
+                    \"status\":\"".$stat[$this->status]."\",
+                    \"createDate\":\"".$this->createDate."\",
+                    \"assignDate\":\"".$this->assignDate."\",
+                    \"assignee\":\"".$this->assignee->getUsername()."\",
+                    \"creator\":\"".$this->creator->getUsername()."\",
+                    \"title\":\"".$this->title."\",
+                    \"text\":\"".$this->text."\"}";
     }
 }
