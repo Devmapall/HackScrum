@@ -27,7 +27,7 @@ class EnumPriority {
         }
     }
     
-    public static function fromString(string $name) :Severity {
+    public static function fromString(string $name) :Priority {
 
         switch($name) {
             case "VERY_LOW": return Priority::VERY_LOW;
