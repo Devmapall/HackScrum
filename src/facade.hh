@@ -96,7 +96,7 @@ class ScrumFacade {
                 foreach($vec as $k=>$iss) {
                         $strvec[] = $iss->toJSON();
                 }
-            echo "{\"issues\":[".implode("",$strvec)."]}";
+            echo "{\"issues\":{".implode("",$strvec)."}}";
         }
         
         public function getUnassignedTasks() :void {
