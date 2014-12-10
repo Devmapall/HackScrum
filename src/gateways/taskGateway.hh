@@ -32,4 +32,9 @@ class TaskGateway extends ScrumElementGateway {
         
         return $return;
     }
+    
+    public function getUnassigned() :Vector<stdClass> {
+        $t = new Task;
+        return Vector{$t};
+    }
 }
