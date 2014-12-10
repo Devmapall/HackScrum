@@ -33,6 +33,7 @@ class IssueFactory extends ScrumElementFactory {
     }
     
     public function getUnassigned() :Vector<ScrumElement> {
+        $ufac = new UserFactory();
         $data = $this->gate->getUnassigned();
         $vec = Vector{};
         
@@ -45,8 +46,8 @@ class IssueFactory extends ScrumElementFactory {
             $i->setTitle($val->title);
             $i->setText($val->text);
             $i->setCreator($ufac->getUserByID((int)$val->ID));
-            $i->setCreate_date(new DateTime($val->create_date));
-            $i->setAssign_date(new DateTime($val->assign_date));
+            $i->setCreateDate(new DateTime($val->create_date));
+            $i->setAssignDate(new DateTime($val->assign_date));
             $i->setAssignee($ufac->getUserByID((int)$val->assignee));
             $vec[] = $i;
         }
