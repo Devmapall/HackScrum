@@ -33,6 +33,8 @@ if(isset($_POST['action'])) {
                 break;
                 case "getMyTasks": $facade->getTasksByUser($sso);
                 break;
+                case "getUnassignedIssues": $facade->getUnassignedIssues();
+                break;
 	}
 
 }
