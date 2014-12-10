@@ -70,11 +70,11 @@ class ScrumFacade {
             var_dump($sval);
             $issue = new Issue();
             $issue->setSeverity(EnumSeverity::fromString($severity));
-            /*$issue->setPriority($pval[$priority]);
-            $issue->setStatus($stval[$status]);
+            $issue->setPriority(EnumPriority::fromString($priority));
+            $issue->setStatus(EnumStatus::fromString($status));
             $issue->setTitle($title);
             $issue->setText($text);
-            $gate->addIssue($issue,$prj->getID(),$prj->getID());*/
+            $gate->addIssue($issue,$prj->getID(),$prj->getID());
         }
 
         public function addTask(string $project, string $severity, string $priority, string $title, string $text) :void {
