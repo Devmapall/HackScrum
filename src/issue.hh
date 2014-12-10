@@ -9,6 +9,7 @@ class Issue extends ScrumElement implements JSON {
         $sev = Severity::getNames();
         $prio = Priority::getNames();
         $stat = Status::getNames();
+        var_dump($this);
         
         return  "\"issue\":{  \"ID\":\"".$this->ID."\",
                     \"severity\":\"".$sev[$this->severity]."\",
