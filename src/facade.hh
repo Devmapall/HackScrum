@@ -71,9 +71,9 @@ class ScrumFacade {
             $pval = Priority::getValues();
             $stval = Status::getValues();
             var_dump($sval);
-            /*$issue = new Issue();
+            $issue = new Issue();
             $issue->setSeverity($sval[$severity]);
-            $issue->setPriority($pval[$priority]);
+            /*$issue->setPriority($pval[$priority]);
             $issue->setStatus($stval[$status]);
             $issue->setTitle($title);
             $issue->setText($text);
@@ -91,5 +91,13 @@ class ScrumFacade {
             $issue->setPriority(Priority::assert($priority));
             $issue->setTitle($title);
             $issue->setText($text);
+        }
+        
+        public function getIssuesByUser(string $sso) :void {
+        
+        }
+        
+        public function getTasksByUser(string $sso) :void {
+        
         }
 }
