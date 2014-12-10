@@ -112,7 +112,7 @@ class ScrumFacade {
         
         }
         
-        public function getIssue(int $id) :void {
+        public function getIssueByID(int $id) :void {
             $fac = new IssueFactory();
             $vec = $fac->getIssueByID($id);
             echo "{\"issue\":{".$vec[0]->toJSON."}";
