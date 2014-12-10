@@ -23,7 +23,7 @@ class EnumStatus {
                 break;
             case 4: return Status::CLOSED;
                 break;
-            default: return Status::UNKOWN;
+            default: return Status::UNKNOWN;
                 break;
         }
     }
