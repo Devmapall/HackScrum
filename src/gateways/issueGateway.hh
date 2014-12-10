@@ -37,7 +37,7 @@ class IssueGateway extends ScrumElementGateway {
         $sql = "SELECT * FROM issues WHERE assignee is NULL;";
         $stmt = $this->scrum->query($sql);
         $return = Vector{};
-        while($row = $stmt->fetchObj()) {
+        while($row = $stmt->fetchObject()) {
             $return[] = $row;
         }
         return $return;
