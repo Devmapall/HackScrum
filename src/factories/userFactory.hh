@@ -46,6 +46,8 @@ class UserFactory {
         public function getUserByID(int $id) :User {
 		$username = $this->gate->getUserByID($id);
 		$u = new User();
+                var_dump($id);
+                var_dump($username);
 		$u->setUsername($username);
 		$u->setID($id);
 		return $u;
