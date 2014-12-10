@@ -5,8 +5,11 @@ enum Severity: int {
     NOTICE = 1;
     WARNING = 2;
     CRITICAL = 3;
-    
-    public function getEnum(int $value) :Severity {
+}
+
+class EnumSeverity {
+
+    public static function fromInt(int $value) :Severity {
         $sev;
         switch($value) {
             case 0: $sev = Severity::IDEA;
@@ -16,6 +19,20 @@ enum Severity: int {
             case 2: $sev = Severity::WARNING;
                 break;
             case 3: $sev = Severity::CRITICAL;
+                break;
+        }
+    }
+    
+    public static function fromString(string $name) :Severity {
+        $sev;
+        switch($name) {
+            case "IDEA": $sev = Severity::IDEA;
+                break;
+            case "NOTICE": $sev = Severity::NOTICE;
+                break;
+            case "WARNING": $sev = Severity::WARNING;
+                break;
+            case "CRITICAL": $sev = Severity::CRITICAL;
                 break;
         }
     }
