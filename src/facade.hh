@@ -96,7 +96,7 @@ class ScrumFacade {
                 foreach($vec as $k=>$iss) {
                         $strvec[] = $iss->toJSON();
                 }
-            var_dump($strvec);
+            
             echo "{\"issues\":{".implode(",",$strvec)."}}";
         }
         
