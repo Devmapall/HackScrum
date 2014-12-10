@@ -42,4 +42,14 @@ class TaskGateway extends ScrumElementGateway {
         }
         return $return;
     }
+    
+    public function getByID(int $id) {
+        $sql = "SELECT * FROM tasks WHERE ID = ".$id.";";
+        $stmt = $this->scrum->query($sql);
+        $return = Vector{};
+        while($row = $stmt->fetchObject()) {
+            $return[] = $row;
+        }
+        return $return;
+    }
 }

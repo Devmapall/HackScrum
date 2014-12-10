@@ -66,7 +66,7 @@ class IssueFactory extends ScrumElementFactory {
             return $issue;
     }
     
-    public function getIssueByID(int $id) {
+    public function getIssueByID(int $id) :Issue {
         $ufac = new UserFactory();
         $vec = $this->gate->getByID($id);
         $val = $vec[0];
