@@ -20,7 +20,7 @@ class Issue extends ScrumElement implements JSON {
             $assUser = "-";
         }
         
-        return  "\"issue\":{  \"ID\":\"".$this->ID."\",
+        return  "{  \"ID\":\"".$this->ID."\",
                     \"severity\":\"".$sev[$this->severity]."\",
                     \"priority\":\"".$prio[$this->priority]."\",
                     \"status\":\"".$stat[$this->status]."\",
