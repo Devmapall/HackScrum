@@ -101,6 +101,10 @@ abstract class ScrumElement implements JSON {
     public function getAssignDate(): DateTime {
         return $this->assignDate;
     }
+
+    public function getAssignee(): User {
+        return $this->assignee;
+    }
     
     public function getHistory(): Set<string> {
         return $this->history;
