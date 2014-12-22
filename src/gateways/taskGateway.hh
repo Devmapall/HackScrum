@@ -64,7 +64,7 @@ class TaskGateway extends ScrumElementGateway {
                         status = ".intval($task->getStatus()).",
                         assignee = ".intval($task->getAssignee()).",
                         assigned = NOW(),
-                     WHERE ID = ".intval($task->getID()).";
+                     WHERE ID = ".intval($task->getID());
          $this->scrum->query($sql);                
     }
 }
