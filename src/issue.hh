@@ -6,9 +6,9 @@ require_once Config::ROOT."abstract/JSON.hh";
 class Issue extends ScrumElement {
 
     public function toJSON() :string {
-        $sev = Severity::getNames();
-        $prio = Priority::getNames();
-        $stat = Status::getNames();
+        $sev = Severity::fromInt($this->severity);
+        $prio = Priority::fromInt($this->priority);
+        $stat = Status::fromInt($this->status);
         $ass = ($this->assignee->getUsername()!=="");
         $assigned = "NO";
         if($ass) {
