@@ -2,6 +2,10 @@
 
 require_once Config::ROOT."abstract/scrumElement.hh";
 require_once Config::ROOT."abstract/JSON.hh";
+require_once Config::ROOT."enum/severity.hh";
+require_once Config::ROOT."enum/priority.hh";
+require_once Config::ROOT."enum/status.hh";
+
 
 class Issue extends ScrumElement {
 
