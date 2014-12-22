@@ -69,7 +69,7 @@ class IssueGateway extends ScrumElementGateway {
                         status = ".intval($issue->getStatus()).",
                         assignee = ".intval($issue->getAssignee()).",
                         assigned = NOW(),
-                     WHERE ID = ".intval($issue->getID()).";
+                     WHERE ID = ".intval($issue->getID());
          $this->scrum->query($sql);                
     }
     
