@@ -10,9 +10,9 @@ require_once Config::ROOT."enum/status.hh";
 class Issue extends ScrumElement {
 
     public function toJSON() :string {
-        $sev = Severity::fromInt($this->severity);
-        $prio = Priority::fromInt($this->priority);
-        $stat = Status::fromInt($this->status);
+        $sev = EnumSeverity::fromInt($this->severity);
+        $prio = EnumPriority::fromInt($this->priority);
+        $stat = EnumStatus::fromInt($this->status);
         $ass = ($this->assignee->getUsername()!=="");
         $assigned = "NO";
         if($ass) {
