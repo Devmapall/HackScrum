@@ -63,6 +63,12 @@ class ScrumFacade {
             $names = Priority::getNames();
             echo "{\"priorities\":".json_encode($names)."}";
         }
+        
+        public function getStatuses() :void {
+            //UNSAFE
+            $names = Status::getNames();
+            echo "{\"statuses\":".json_encode($names)."}";
+        }
 
         public function addIssue(string $project, string $severity, string $priority, string $title, string $text, string $sso) :void {
             //UNSAFE
