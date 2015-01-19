@@ -57,6 +57,21 @@ class IssueGateway extends ScrumElementGateway {
                 NULL,NULL,".$issue->getCreator()->getID().");";
         $this->scrum->query($sql);
     }
+
+    public function updateIssue(Issue $issue, int $prj_id) :void {
+        $sql = "UPDATE issues
+                    SET 
+                        title = '".mysql_real_escape_string($issue->getTitle())."',
+                        text = '".mysql_real_escape_string($issue->getText())."',
+                        project_id = ".intval($prj_id).",
+                        severity = ".intval($issue->getSeverity()).",
+                        priority = ".intval($issue->getPriority()).",
+                        status = ".intval($issue->getStatus()).",
+                        assignee = ".intval($issue->getAssignee()).",
+                        assigned = NOW(),
+                     WHERE ID = ".intval($issue->getID());
+         $this->scrum->query($sql);                
+    }
     
     public function getByID(int $id) {
         $sql = "SELECT * FROM issues WHERE ID = ".$id.";";

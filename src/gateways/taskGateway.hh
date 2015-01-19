@@ -52,4 +52,19 @@ class TaskGateway extends ScrumElementGateway {
         }
         return $return;
     }
+    
+    public function updateTask(Task $task, int $prj_id) :void {
+        $sql = "UPDATE task
+                    SET 
+                        title = '".mysql_real_escape_string($task->getTitle())."',
+                        text = '".mysql_real_escape_string($task->getText())."',
+                        project_id = ".intval($prj_id).",
+                        severity = ".intval($task->getSeverity()).",
+                        priority = ".intval($task->getPriority()).",
+                        status = ".intval($task->getStatus()).",
+                        assignee = ".intval($task->getAssignee()).",
+                        assigned = NOW(),
+                     WHERE ID = ".intval($task->getID());
+         $this->scrum->query($sql);                
+    }
 }
